@@ -7,6 +7,8 @@ resource "aws_instance" "for_user" {
   user_data = <<-EOF
               #!/bin/bash
               sudo apt install nginx
+              sudo systemctl enable nginx
+              sudo systemctl start nginx
               EOF
 
   tags = {
